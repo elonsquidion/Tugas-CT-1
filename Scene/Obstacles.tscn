@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/arcade_platformerV2-removebg-preview.png" type="Texture" id=1]
+
+[sub_resource type="TileSet" id=1]
+1/name = "arcade_platformerV2-removebg-preview.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 208, 0, 48, 48 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.5, 21 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10.8024, 10.497 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2( 3.27449, 3.27449 )
+
+[node name="TileMap" type="TileMap" parent="StaticBody2D"]
+position = Vector2( -24, -19 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.5, 7 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0.802428, 0.497037 )
+scale = Vector2( 1.16489, 1.26805 )
+shape = SubResource( 3 )
